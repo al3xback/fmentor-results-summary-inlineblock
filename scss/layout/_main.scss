@@ -8,10 +8,12 @@ main > .container {
 	text-align: center;
 }
 
-main > .container::before {
-	content: '';
-	display: inline-block;
-	width: 1px;
-	margin-left: -1px;
-	vertical-align: middle;
+@media (min-width: 51em) {
+	main > .container::before {
+		content: '';
+		display: inline-block;
+		width: 1px;
+		margin-left: -1px;
+		vertical-align: middle;
+	}
 }

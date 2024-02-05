@@ -5,17 +5,12 @@
 	display: inline-block;
 	width: 100%;
 	max-width: func.em(375);
-	padding: 0 0 func.em(60);
-	margin: 0 auto;
-	text-align: left;
-	vertical-align: middle;
-}
-
-.card__inner {
 	background-color: var.$color-white;
+	margin: 0 0 func.em(60);
 	border-radius: 0 0 32px 32px;
 	box-shadow: 24px 40px 30px rgba(0, 0, 0, 0.04);
 	overflow: hidden;
+	text-align: left;
 }
 
 .card__result {
@@ -144,17 +139,15 @@
 
 @media (min-width: 51em) {
 	.card {
-		max-width: func.em(736, 18);
-		padding: func.em(30) 0 func.em(60);
-	}
-
-	.card__inner {
 		position: relative;
 		z-index: 1;
+		max-width: func.em(736, 18);
+		margin: func.em(30) 0 func.em(60);
 		border-radius: 32px;
+		vertical-align: middle;
 	}
 
-	.card__inner::before {
+	.card::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -169,7 +162,7 @@
 		border-radius: 0 0 32px 32px;
 	}
 
-	.card__inner::after {
+	.card::after {
 		content: '';
 		display: table;
 		clear: both;
