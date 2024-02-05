@@ -1,0 +1,218 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+
+.card {
+	display: inline-block;
+	width: 100%;
+	max-width: func.em(375);
+	padding: 0 0 func.em(60);
+	margin: 0 auto;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.card__inner {
+	background-color: var.$color-white;
+	border-radius: 0 0 32px 32px;
+	box-shadow: 24px 40px 30px rgba(0, 0, 0, 0.04);
+	overflow: hidden;
+}
+
+.card__result {
+	padding: func.em(30) func.em(40) func.em(40);
+	background-image: linear-gradient(
+		var.$color-light-slate-blue,
+		var.$color-light-royal-blue
+	);
+	border-radius: inherit;
+	color: var.$color-light-lavender;
+	text-align: center;
+}
+
+.card__result .card__title {
+	color: inherit;
+}
+
+.card__title {
+	margin-bottom: func.em(24, 20);
+}
+
+.card__chart {
+	width: func.em(140);
+	height: func.em(140);
+	padding: func.em(24);
+	background-image: linear-gradient(
+		var.$color-violet-blue,
+		var.$color-persian-blue
+	);
+	margin: 0 auto func.em(24);
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.card__chart-score {
+	display: block;
+	font-size: func.em(56);
+	color: var.$color-white;
+}
+
+.card__chart span:last-child {
+	opacity: 0.5;
+}
+
+.card__desc-title {
+	margin-bottom: func.em(10, 24);
+	font-size: func.em(24);
+	color: var.$color-white;
+}
+
+.card__summary {
+	padding: func.em(32);
+}
+
+.card__data-list {
+	margin-bottom: func.em(24);
+}
+
+.card__data-item {
+	padding: func.em(16);
+	border-radius: 12px;
+}
+
+.card__data-item--reaction {
+	background-color: var.$color-light-red-light;
+	color: var.$color-light-red;
+}
+
+.card__data-item--memory {
+	background-color: var.$color-orange-yellow-light;
+	color: var.$color-orange-yellow;
+}
+
+.card__data-item--verbal {
+	background-color: var.$color-green-teal-light;
+	color: var.$color-green-teal;
+}
+
+.card__data-item--visual {
+	background-color: var.$color-cobalt-blue-light;
+	color: var.$color-cobalt-blue;
+}
+
+.card__data-item::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.card__data-item:not(:first-child) {
+	margin-top: func.em(16);
+}
+
+.card__data-item > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.card__data-img {
+	width: func.em(20);
+	height: auto;
+	margin-right: func.em(12);
+}
+
+.card__data-title {
+	width: 54%;
+	margin-right: func.em(12, 16);
+	font-size: func.em(16);
+	color: inherit;
+}
+
+.card__data-score {
+	width: func.em(74);
+	font-weight: var.$font-weight-700;
+	color: var.$color-dark-gray-blue;
+	text-align: right;
+}
+
+.card__data-score span:first-child {
+	margin-right: func.em(6);
+}
+
+.card__data-score span:last-child {
+	opacity: 0.5;
+}
+
+@media (min-width: 51em) {
+	.card {
+		max-width: func.em(736, 18);
+		padding: func.em(30) 0 func.em(60);
+	}
+
+	.card__inner {
+		position: relative;
+		z-index: 1;
+		border-radius: 32px;
+	}
+
+	.card__inner::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 50%;
+		height: 100%;
+		background-image: linear-gradient(
+			var.$color-light-slate-blue,
+			var.$color-light-royal-blue
+		);
+		border-radius: 0 0 32px 32px;
+	}
+
+	.card__inner::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	.card__result,
+	.card__summary {
+		float: left;
+		width: 50%;
+		padding: func.em(40, 18);
+	}
+
+	.card__result {
+		background-image: none;
+	}
+
+	.card__title {
+		font-size: func.em(24, 18);
+	}
+
+	.card__chart {
+		width: func.em(200, 18);
+		height: func.em(200, 18);
+	}
+
+	.card__chart-score {
+		margin-top: func.em(10, 72);
+		font-size: func.em(72, 18);
+	}
+
+	.card__desc {
+		max-width: func.em(270, 18);
+	}
+
+	.card__desc-title {
+		font-size: func.em(32, 18);
+	}
+
+	.card__data-title {
+		width: 44%;
+	}
+
+	.card__data-score {
+		width: func.em(82, 18);
+	}
+}
